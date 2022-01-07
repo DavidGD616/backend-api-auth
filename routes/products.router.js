@@ -1,5 +1,6 @@
 const express = require('express');
 
+
 const ProductsService = require('./../services/product.service');
 const validatorHandler = require('./../middlewares/validator.handler');
 const { createProductSchema, updateProductSchema, getProductSchema, queryProductSchema } = require('./../schemas/product.schema');
@@ -32,7 +33,8 @@ router.get('/:id',
   }
 );
 
-router.post('/',
+router.post(
+  '/',
   validatorHandler(createProductSchema, 'body'),
   async (req, res, next) => {
     try {

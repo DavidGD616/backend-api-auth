@@ -1,5 +1,6 @@
 const express = require('express');
 
+
 const CustomerService = require('../services/customers.service');
 const validationHandler = require('../middlewares/validator.handler');
 const {
@@ -19,7 +20,8 @@ router.get('/',  async (req, res, next) => {
   }
 });
 
-router.post('/',
+router.post(
+  '/',
   validationHandler(createCustomerSchema, 'body'),
   async (req, res, next) => {
     try {
